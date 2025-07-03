@@ -41,10 +41,8 @@ struct MotorControl_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->front_left = 0;
-      this->front_right = 0;
-      this->rear_left = 0;
-      this->rear_right = 0;
+      this->linear_velocity = 0;
+      this->angular_velocity = 0;
     }
   }
 
@@ -54,50 +52,30 @@ struct MotorControl_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->front_left = 0;
-      this->front_right = 0;
-      this->rear_left = 0;
-      this->rear_right = 0;
+      this->linear_velocity = 0;
+      this->angular_velocity = 0;
     }
   }
 
   // field types and members
-  using _front_left_type =
-    uint8_t;
-  _front_left_type front_left;
-  using _front_right_type =
-    uint8_t;
-  _front_right_type front_right;
-  using _rear_left_type =
-    uint8_t;
-  _rear_left_type rear_left;
-  using _rear_right_type =
-    uint8_t;
-  _rear_right_type rear_right;
+  using _linear_velocity_type =
+    int8_t;
+  _linear_velocity_type linear_velocity;
+  using _angular_velocity_type =
+    int8_t;
+  _angular_velocity_type angular_velocity;
 
   // setters for named parameter idiom
-  Type & set__front_left(
-    const uint8_t & _arg)
+  Type & set__linear_velocity(
+    const int8_t & _arg)
   {
-    this->front_left = _arg;
+    this->linear_velocity = _arg;
     return *this;
   }
-  Type & set__front_right(
-    const uint8_t & _arg)
+  Type & set__angular_velocity(
+    const int8_t & _arg)
   {
-    this->front_right = _arg;
-    return *this;
-  }
-  Type & set__rear_left(
-    const uint8_t & _arg)
-  {
-    this->rear_left = _arg;
-    return *this;
-  }
-  Type & set__rear_right(
-    const uint8_t & _arg)
-  {
-    this->rear_right = _arg;
+    this->angular_velocity = _arg;
     return *this;
   }
 
@@ -143,16 +121,10 @@ struct MotorControl_
   // comparison operators
   bool operator==(const MotorControl_ & other) const
   {
-    if (this->front_left != other.front_left) {
+    if (this->linear_velocity != other.linear_velocity) {
       return false;
     }
-    if (this->front_right != other.front_right) {
-      return false;
-    }
-    if (this->rear_left != other.rear_left) {
-      return false;
-    }
-    if (this->rear_right != other.rear_right) {
+    if (this->angular_velocity != other.angular_velocity) {
       return false;
     }
     return true;

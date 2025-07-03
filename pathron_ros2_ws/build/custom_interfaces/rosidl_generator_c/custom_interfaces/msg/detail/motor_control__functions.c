@@ -17,10 +17,8 @@ custom_interfaces__msg__MotorControl__init(custom_interfaces__msg__MotorControl 
   if (!msg) {
     return false;
   }
-  // front_left
-  // front_right
-  // rear_left
-  // rear_right
+  // linear_velocity
+  // angular_velocity
   return true;
 }
 
@@ -30,10 +28,8 @@ custom_interfaces__msg__MotorControl__fini(custom_interfaces__msg__MotorControl 
   if (!msg) {
     return;
   }
-  // front_left
-  // front_right
-  // rear_left
-  // rear_right
+  // linear_velocity
+  // angular_velocity
 }
 
 bool
@@ -42,20 +38,12 @@ custom_interfaces__msg__MotorControl__are_equal(const custom_interfaces__msg__Mo
   if (!lhs || !rhs) {
     return false;
   }
-  // front_left
-  if (lhs->front_left != rhs->front_left) {
+  // linear_velocity
+  if (lhs->linear_velocity != rhs->linear_velocity) {
     return false;
   }
-  // front_right
-  if (lhs->front_right != rhs->front_right) {
-    return false;
-  }
-  // rear_left
-  if (lhs->rear_left != rhs->rear_left) {
-    return false;
-  }
-  // rear_right
-  if (lhs->rear_right != rhs->rear_right) {
+  // angular_velocity
+  if (lhs->angular_velocity != rhs->angular_velocity) {
     return false;
   }
   return true;
@@ -69,14 +57,10 @@ custom_interfaces__msg__MotorControl__copy(
   if (!input || !output) {
     return false;
   }
-  // front_left
-  output->front_left = input->front_left;
-  // front_right
-  output->front_right = input->front_right;
-  // rear_left
-  output->rear_left = input->rear_left;
-  // rear_right
-  output->rear_right = input->rear_right;
+  // linear_velocity
+  output->linear_velocity = input->linear_velocity;
+  // angular_velocity
+  output->angular_velocity = input->angular_velocity;
   return true;
 }
 

@@ -28,31 +28,17 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: front_left
+  // member: linear_velocity
   {
-    out << "front_left: ";
-    rosidl_generator_traits::value_to_yaml(msg.front_left, out);
+    out << "linear_velocity: ";
+    rosidl_generator_traits::value_to_yaml(msg.linear_velocity, out);
     out << ", ";
   }
 
-  // member: front_right
+  // member: angular_velocity
   {
-    out << "front_right: ";
-    rosidl_generator_traits::value_to_yaml(msg.front_right, out);
-    out << ", ";
-  }
-
-  // member: rear_left
-  {
-    out << "rear_left: ";
-    rosidl_generator_traits::value_to_yaml(msg.rear_left, out);
-    out << ", ";
-  }
-
-  // member: rear_right
-  {
-    out << "rear_right: ";
-    rosidl_generator_traits::value_to_yaml(msg.rear_right, out);
+    out << "angular_velocity: ";
+    rosidl_generator_traits::value_to_yaml(msg.angular_velocity, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -61,43 +47,23 @@ inline void to_block_style_yaml(
   const MotorControl & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: front_left
+  // member: linear_velocity
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "front_left: ";
-    rosidl_generator_traits::value_to_yaml(msg.front_left, out);
+    out << "linear_velocity: ";
+    rosidl_generator_traits::value_to_yaml(msg.linear_velocity, out);
     out << "\n";
   }
 
-  // member: front_right
+  // member: angular_velocity
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "front_right: ";
-    rosidl_generator_traits::value_to_yaml(msg.front_right, out);
-    out << "\n";
-  }
-
-  // member: rear_left
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "rear_left: ";
-    rosidl_generator_traits::value_to_yaml(msg.rear_left, out);
-    out << "\n";
-  }
-
-  // member: rear_right
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "rear_right: ";
-    rosidl_generator_traits::value_to_yaml(msg.rear_right, out);
+    out << "angular_velocity: ";
+    rosidl_generator_traits::value_to_yaml(msg.angular_velocity, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

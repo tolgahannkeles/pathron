@@ -1,1 +1,1 @@
-/home/tolgahan/pathron_ros2_ws/src/custom_interfaces/msg/MotorControl.msg
+/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces/msg/MotorControl.msg

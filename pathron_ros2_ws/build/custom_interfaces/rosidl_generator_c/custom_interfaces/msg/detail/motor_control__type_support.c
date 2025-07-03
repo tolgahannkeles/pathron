@@ -4,10 +4,10 @@
 
 #include <string.h>
 
+#include "rosidl_typesupport_interface/macros.h"
+#include "custom_interfaces/msg/detail/motor_control__type_support.h"
 #include "custom_interfaces/msg/detail/motor_control__struct.h"
 #include "custom_interfaces/msg/detail/motor_control__functions.h"
-#include "custom_interfaces/msg/detail/motor_control__type_support.h"
-#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

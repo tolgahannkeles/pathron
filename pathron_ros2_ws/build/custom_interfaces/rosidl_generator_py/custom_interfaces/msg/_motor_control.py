@@ -62,27 +62,21 @@ class MotorControl(metaclass=Metaclass_MotorControl):
     """Message class 'MotorControl'."""
 
     __slots__ = [
-        '_front_left',
-        '_front_right',
-        '_rear_left',
-        '_rear_right',
+        '_linear_velocity',
+        '_angular_velocity',
         '_check_fields',
     ]
 
     _fields_and_field_types = {
-        'front_left': 'uint8',
-        'front_right': 'uint8',
-        'rear_left': 'uint8',
-        'rear_right': 'uint8',
+        'linear_velocity': 'int8',
+        'angular_velocity': 'int8',
     }
 
     # This attribute is used to store an rosidl_parser.definition variable
     # related to the data type of each of the components the message.
     SLOT_TYPES = (
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -94,10 +88,8 @@ class MotorControl(metaclass=Metaclass_MotorControl):
             assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
                 'Invalid arguments passed to constructor: %s' % \
                 ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.front_left = kwargs.get('front_left', int())
-        self.front_right = kwargs.get('front_right', int())
-        self.rear_left = kwargs.get('rear_left', int())
-        self.rear_right = kwargs.get('rear_right', int())
+        self.linear_velocity = kwargs.get('linear_velocity', int())
+        self.angular_velocity = kwargs.get('angular_velocity', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -129,13 +121,9 @@ class MotorControl(metaclass=Metaclass_MotorControl):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.front_left != other.front_left:
+        if self.linear_velocity != other.linear_velocity:
             return False
-        if self.front_right != other.front_right:
-            return False
-        if self.rear_left != other.rear_left:
-            return False
-        if self.rear_right != other.rear_right:
+        if self.angular_velocity != other.angular_velocity:
             return False
         return True
 
@@ -145,61 +133,31 @@ class MotorControl(metaclass=Metaclass_MotorControl):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def front_left(self):
-        """Message field 'front_left'."""
-        return self._front_left
+    def linear_velocity(self):
+        """Message field 'linear_velocity'."""
+        return self._linear_velocity
 
-    @front_left.setter
-    def front_left(self, value):
+    @linear_velocity.setter
+    def linear_velocity(self, value):
         if self._check_fields:
             assert \
                 isinstance(value, int), \
-                "The 'front_left' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'front_left' field must be an unsigned integer in [0, 255]"
-        self._front_left = value
+                "The 'linear_velocity' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'linear_velocity' field must be an integer in [-128, 127]"
+        self._linear_velocity = value
 
     @builtins.property
-    def front_right(self):
-        """Message field 'front_right'."""
-        return self._front_right
+    def angular_velocity(self):
+        """Message field 'angular_velocity'."""
+        return self._angular_velocity
 
-    @front_right.setter
-    def front_right(self, value):
+    @angular_velocity.setter
+    def angular_velocity(self, value):
         if self._check_fields:
             assert \
                 isinstance(value, int), \
-                "The 'front_right' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'front_right' field must be an unsigned integer in [0, 255]"
-        self._front_right = value
-
-    @builtins.property
-    def rear_left(self):
-        """Message field 'rear_left'."""
-        return self._rear_left
-
-    @rear_left.setter
-    def rear_left(self, value):
-        if self._check_fields:
-            assert \
-                isinstance(value, int), \
-                "The 'rear_left' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'rear_left' field must be an unsigned integer in [0, 255]"
-        self._rear_left = value
-
-    @builtins.property
-    def rear_right(self):
-        """Message field 'rear_right'."""
-        return self._rear_right
-
-    @rear_right.setter
-    def rear_right(self, value):
-        if self._check_fields:
-            assert \
-                isinstance(value, int), \
-                "The 'rear_right' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'rear_right' field must be an unsigned integer in [0, 255]"
-        self._rear_right = value
+                "The 'angular_velocity' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'angular_velocity' field must be an integer in [-128, 127]"
+        self._angular_velocity = value

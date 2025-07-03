@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/tolgahan/pathron_ros2_ws/install/custom_interfaces/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/tolgahan/pathron/pathron_ros2_ws/install/custom_interfaces/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -123,7 +123,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/tolgahan/pathron_ros2_ws/install/custom_interfaces/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/tolgahan/pathron/pathron_ros2_ws/install/custom_interfaces/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -181,7 +181,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/tolgahan/pathron_ros2_ws/install/custom_interfaces/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/tolgahan/pathron/pathron_ros2_ws/install/custom_interfaces/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -251,7 +251,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/tolgahan/pathron_ros2_ws/install/custom_interfaces/${destination}")
+      set(destination "/home/tolgahan/pathron/pathron_ros2_ws/install/custom_interfaces/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -310,122 +310,122 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/rosidl_interfaces")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_type_description/custom_interfaces/msg/MotorControl.json" "DESTINATION" "share/custom_interfaces/msg")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_type_description/custom_interfaces/msg/MotorControl.json" "DESTINATION" "share/custom_interfaces/msg")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_type_description/custom_interfaces/msg/MotorControl.json" "DESTINATION" "share/custom_interfaces/msg")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_type_description/custom_interfaces/msg/MotorControl.json" "DESTINATION" "share/custom_interfaces/msg")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
 
 # install(FILES "/opt/ros/jazzy/lib/python3.12/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/opt/ros/jazzy/lib/python3.12/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/opt/ros/jazzy/lib/python3.12/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_fastrtps_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN_EXCLUDE" "*.cpp")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_c/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.h")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_introspection_cpp/custom_interfaces/" "DESTINATION" "include/custom_interfaces/custom_interfaces" "PATTERN" "*.hpp")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/custom_interfaces/environment")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.sh" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/custom_interfaces/environment")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_python/custom_interfaces/custom_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces-0.0.0-py3.12.egg-info")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_python/custom_interfaces/custom_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces-0.0.0-py3.12.egg-info")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_python/custom_interfaces/custom_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces-0.0.0-py3.12.egg-info")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_python/custom_interfaces/custom_interfaces.egg-info/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces-0.0.0-py3.12.egg-info")
 
-# install(DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_py/custom_interfaces/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
-ament_cmake_symlink_install_directory("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_py/custom_interfaces/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+# install(DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_py/custom_interfaces/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
+ament_cmake_symlink_install_directory("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" DIRECTORY "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_py/custom_interfaces/" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 
 # install("TARGETS" "custom_interfaces_s__rosidl_typesupport_fastrtps_c" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces")
-include("/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install("TARGETS" "custom_interfaces_s__rosidl_typesupport_introspection_c" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces")
-include("/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_symlink_install_targets_1_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install("TARGETS" "custom_interfaces_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.12/site-packages/custom_interfaces")
-include("/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_adapter/custom_interfaces/msg/MotorControl.idl" "DESTINATION" "share/custom_interfaces/msg")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_adapter/custom_interfaces/msg/MotorControl.idl" "DESTINATION" "share/custom_interfaces/msg")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_adapter/custom_interfaces/msg/MotorControl.idl" "DESTINATION" "share/custom_interfaces/msg")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_adapter/custom_interfaces/msg/MotorControl.idl" "DESTINATION" "share/custom_interfaces/msg")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/src/custom_interfaces/msg/MotorControl.msg" "DESTINATION" "share/custom_interfaces/msg")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/src/custom_interfaces/msg/MotorControl.msg" "DESTINATION" "share/custom_interfaces/msg")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces/msg/MotorControl.msg" "DESTINATION" "share/custom_interfaces/msg")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces/msg/MotorControl.msg" "DESTINATION" "share/custom_interfaces/msg")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/custom_interfaces/environment")
 
 # install(FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/custom_interfaces/environment")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/custom_interfaces/environment")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/custom_interfaces/environment")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/custom_interfaces/environment")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/custom_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/custom_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/custom_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/custom_interfaces")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/custom_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/custom_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/custom_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/custom_interfaces")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/custom_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/custom_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/custom_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/custom_interfaces")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/custom_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/custom_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/custom_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/custom_interfaces")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/custom_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/custom_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/custom_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/custom_interfaces")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_index/share/ament_index/resource_index/packages/custom_interfaces" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_export_targets/ament_cmake_export_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_targets-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig.cmake" "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig-version.cmake" "DESTINATION" "share/custom_interfaces/cmake")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig.cmake" "/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig-version.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig.cmake" "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig-version.cmake" "DESTINATION" "share/custom_interfaces/cmake")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig.cmake" "/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/ament_cmake_core/custom_interfacesConfig-version.cmake" "DESTINATION" "share/custom_interfaces/cmake")
 
-# install(FILES "/home/tolgahan/pathron_ros2_ws/src/custom_interfaces/package.xml" "DESTINATION" "share/custom_interfaces")
-ament_cmake_symlink_install_files("/home/tolgahan/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron_ros2_ws/src/custom_interfaces/package.xml" "DESTINATION" "share/custom_interfaces")
+# install(FILES "/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces/package.xml" "DESTINATION" "share/custom_interfaces")
+ament_cmake_symlink_install_files("/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces" FILES "/home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces/package.xml" "DESTINATION" "share/custom_interfaces")

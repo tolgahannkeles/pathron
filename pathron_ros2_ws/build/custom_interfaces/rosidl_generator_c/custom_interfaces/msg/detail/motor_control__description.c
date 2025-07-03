@@ -11,10 +11,10 @@ custom_interfaces__msg__MotorControl__get_type_hash(
 {
   (void)type_support;
   static rosidl_type_hash_t hash = {1, {
-      0x8a, 0x3b, 0x2b, 0x8f, 0xcf, 0xf0, 0xb1, 0x35,
-      0x67, 0x85, 0x72, 0xf0, 0xe4, 0xc5, 0xd4, 0x93,
-      0x79, 0xa9, 0x64, 0x08, 0xaf, 0xa6, 0x54, 0x82,
-      0x83, 0x9d, 0x8c, 0x2a, 0x08, 0xef, 0x61, 0x85,
+      0x98, 0x7b, 0x1a, 0xb6, 0xa6, 0x21, 0xcf, 0xa7,
+      0x4c, 0x61, 0x20, 0xf6, 0xe8, 0xef, 0xcb, 0x72,
+      0x96, 0xa1, 0x56, 0x22, 0x65, 0xb7, 0x65, 0xb4,
+      0x22, 0x63, 0x75, 0x54, 0xe7, 0x8b, 0xfe, 0xf1,
     }};
   return &hash;
 }
@@ -31,16 +31,14 @@ custom_interfaces__msg__MotorControl__get_type_hash(
 static char custom_interfaces__msg__MotorControl__TYPE_NAME[] = "custom_interfaces/msg/MotorControl";
 
 // Define type names, field names, and default values
-static char custom_interfaces__msg__MotorControl__FIELD_NAME__front_left[] = "front_left";
-static char custom_interfaces__msg__MotorControl__FIELD_NAME__front_right[] = "front_right";
-static char custom_interfaces__msg__MotorControl__FIELD_NAME__rear_left[] = "rear_left";
-static char custom_interfaces__msg__MotorControl__FIELD_NAME__rear_right[] = "rear_right";
+static char custom_interfaces__msg__MotorControl__FIELD_NAME__linear_velocity[] = "linear_velocity";
+static char custom_interfaces__msg__MotorControl__FIELD_NAME__angular_velocity[] = "angular_velocity";
 
 static rosidl_runtime_c__type_description__Field custom_interfaces__msg__MotorControl__FIELDS[] = {
   {
-    {custom_interfaces__msg__MotorControl__FIELD_NAME__front_left, 10, 10},
+    {custom_interfaces__msg__MotorControl__FIELD_NAME__linear_velocity, 15, 15},
     {
-      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_UINT8,
+      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_INT8,
       0,
       0,
       {NULL, 0, 0},
@@ -48,29 +46,9 @@ static rosidl_runtime_c__type_description__Field custom_interfaces__msg__MotorCo
     {NULL, 0, 0},
   },
   {
-    {custom_interfaces__msg__MotorControl__FIELD_NAME__front_right, 11, 11},
+    {custom_interfaces__msg__MotorControl__FIELD_NAME__angular_velocity, 16, 16},
     {
-      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_UINT8,
-      0,
-      0,
-      {NULL, 0, 0},
-    },
-    {NULL, 0, 0},
-  },
-  {
-    {custom_interfaces__msg__MotorControl__FIELD_NAME__rear_left, 9, 9},
-    {
-      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_UINT8,
-      0,
-      0,
-      {NULL, 0, 0},
-    },
-    {NULL, 0, 0},
-  },
-  {
-    {custom_interfaces__msg__MotorControl__FIELD_NAME__rear_right, 10, 10},
-    {
-      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_UINT8,
+      rosidl_runtime_c__type_description__FieldType__FIELD_TYPE_INT8,
       0,
       0,
       {NULL, 0, 0},
@@ -88,7 +66,7 @@ custom_interfaces__msg__MotorControl__get_type_description(
   static const rosidl_runtime_c__type_description__TypeDescription description = {
     {
       {custom_interfaces__msg__MotorControl__TYPE_NAME, 34, 34},
-      {custom_interfaces__msg__MotorControl__FIELDS, 4, 4},
+      {custom_interfaces__msg__MotorControl__FIELDS, 2, 2},
     },
     {NULL, 0, 0},
   };
@@ -99,10 +77,8 @@ custom_interfaces__msg__MotorControl__get_type_description(
 }
 
 static char toplevel_type_raw_source[] =
-  "uint8 front_left\n"
-  "uint8 front_right\n"
-  "uint8 rear_left\n"
-  "uint8 rear_right";
+  "int8 linear_velocity   # -100: tam geri, 0: dur, +100: tam ileri\n"
+  "int8 angular_velocity  # -100: sola tam d\\xc3\\xb6n, 0: d\\xc3\\xbcz, +100: sa\\xc4\\x9fa tam d\\xc3\\xb6n";
 
 static char msg_encoding[] = "msg";
 
@@ -116,7 +92,7 @@ custom_interfaces__msg__MotorControl__get_individual_type_description_source(
   static const rosidl_runtime_c__type_description__TypeSource source = {
     {custom_interfaces__msg__MotorControl__TYPE_NAME, 34, 34},
     {msg_encoding, 3, 3},
-    {toplevel_type_raw_source, 67, 67},
+    {toplevel_type_raw_source, 136, 136},
   };
   return &source;
 }

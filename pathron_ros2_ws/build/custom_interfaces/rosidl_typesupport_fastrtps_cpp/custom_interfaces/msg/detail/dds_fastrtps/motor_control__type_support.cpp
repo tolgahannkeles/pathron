@@ -36,17 +36,11 @@ cdr_serialize(
   const custom_interfaces::msg::MotorControl & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: front_left
-  cdr << ros_message.front_left;
+  // Member: linear_velocity
+  cdr << ros_message.linear_velocity;
 
-  // Member: front_right
-  cdr << ros_message.front_right;
-
-  // Member: rear_left
-  cdr << ros_message.rear_left;
-
-  // Member: rear_right
-  cdr << ros_message.rear_right;
+  // Member: angular_velocity
+  cdr << ros_message.angular_velocity;
 
   return true;
 }
@@ -57,17 +51,11 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   custom_interfaces::msg::MotorControl & ros_message)
 {
-  // Member: front_left
-  cdr >> ros_message.front_left;
+  // Member: linear_velocity
+  cdr >> ros_message.linear_velocity;
 
-  // Member: front_right
-  cdr >> ros_message.front_right;
-
-  // Member: rear_left
-  cdr >> ros_message.rear_left;
-
-  // Member: rear_right
-  cdr >> ros_message.rear_right;
+  // Member: angular_velocity
+  cdr >> ros_message.angular_velocity;
 
   return true;
 }
@@ -86,30 +74,16 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: front_left
+  // Member: linear_velocity
   {
-    size_t item_size = sizeof(ros_message.front_left);
+    size_t item_size = sizeof(ros_message.linear_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Member: front_right
+  // Member: angular_velocity
   {
-    size_t item_size = sizeof(ros_message.front_right);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Member: rear_left
-  {
-    size_t item_size = sizeof(ros_message.rear_left);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Member: rear_right
-  {
-    size_t item_size = sizeof(ros_message.rear_right);
+    size_t item_size = sizeof(ros_message.angular_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -137,25 +111,13 @@ max_serialized_size_MotorControl(
   full_bounded = true;
   is_plain = true;
 
-  // Member: front_left
+  // Member: linear_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // Member: front_right
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // Member: rear_left
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-  // Member: rear_right
+  // Member: angular_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
@@ -170,7 +132,7 @@ max_serialized_size_MotorControl(
     using DataType = custom_interfaces::msg::MotorControl;
     is_plain =
       (
-      offsetof(DataType, rear_right) +
+      offsetof(DataType, angular_velocity) +
       last_member_size
       ) == ret_val;
   }
@@ -184,17 +146,11 @@ cdr_serialize_key(
   const custom_interfaces::msg::MotorControl & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: front_left
-  cdr << ros_message.front_left;
+  // Member: linear_velocity
+  cdr << ros_message.linear_velocity;
 
-  // Member: front_right
-  cdr << ros_message.front_right;
-
-  // Member: rear_left
-  cdr << ros_message.rear_left;
-
-  // Member: rear_right
-  cdr << ros_message.rear_right;
+  // Member: angular_velocity
+  cdr << ros_message.angular_velocity;
 
   return true;
 }
@@ -212,30 +168,16 @@ get_serialized_size_key(
   (void)padding;
   (void)wchar_size;
 
-  // Member: front_left
+  // Member: linear_velocity
   {
-    size_t item_size = sizeof(ros_message.front_left);
+    size_t item_size = sizeof(ros_message.linear_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Member: front_right
+  // Member: angular_velocity
   {
-    size_t item_size = sizeof(ros_message.front_right);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Member: rear_left
-  {
-    size_t item_size = sizeof(ros_message.rear_left);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Member: rear_right
-  {
-    size_t item_size = sizeof(ros_message.rear_right);
+    size_t item_size = sizeof(ros_message.angular_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -262,28 +204,14 @@ max_serialized_size_key_MotorControl(
   full_bounded = true;
   is_plain = true;
 
-  // Member: front_left
+  // Member: linear_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: front_right
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Member: rear_left
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Member: rear_right
+  // Member: angular_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
@@ -298,7 +226,7 @@ max_serialized_size_key_MotorControl(
     using DataType = custom_interfaces::msg::MotorControl;
     is_plain =
       (
-      offsetof(DataType, rear_right) +
+      offsetof(DataType, angular_velocity) +
       last_member_size
       ) == ret_val;
   }

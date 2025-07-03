@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tolgahan/pathron_ros2_ws/src/custom_interfaces
+CMAKE_SOURCE_DIR = /home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tolgahan/pathron_ros2_ws/build/custom_interfaces
+CMAKE_BINARY_DIR = /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces
 
 # Utility rule file for custom_interfaces__cpp.
 
@@ -155,8 +155,8 @@ rosidl_generator_cpp/custom_interfaces/msg/motor_control.hpp: /opt/ros/jazzy/sha
 rosidl_generator_cpp/custom_interfaces/msg/motor_control.hpp: /opt/ros/jazzy/share/std_msgs/msg/UInt64MultiArray.idl
 rosidl_generator_cpp/custom_interfaces/msg/motor_control.hpp: /opt/ros/jazzy/share/std_msgs/msg/UInt8.idl
 rosidl_generator_cpp/custom_interfaces/msg/motor_control.hpp: /opt/ros/jazzy/share/std_msgs/msg/UInt8MultiArray.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tolgahan/pathron_ros2_ws/build/custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
-	/usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3 /opt/ros/jazzy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp__arguments.json
 
 rosidl_generator_cpp/custom_interfaces/msg/detail/motor_control__builder.hpp: rosidl_generator_cpp/custom_interfaces/msg/motor_control.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/custom_interfaces/msg/detail/motor_control__builder.hpp
@@ -192,6 +192,6 @@ CMakeFiles/custom_interfaces__cpp.dir/clean:
 .PHONY : CMakeFiles/custom_interfaces__cpp.dir/clean
 
 CMakeFiles/custom_interfaces__cpp.dir/depend:
-	cd /home/tolgahan/pathron_ros2_ws/build/custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tolgahan/pathron_ros2_ws/src/custom_interfaces /home/tolgahan/pathron_ros2_ws/src/custom_interfaces /home/tolgahan/pathron_ros2_ws/build/custom_interfaces /home/tolgahan/pathron_ros2_ws/build/custom_interfaces /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/CMakeFiles/custom_interfaces__cpp.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces /home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/CMakeFiles/custom_interfaces__cpp.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/custom_interfaces__cpp.dir/depend
 

@@ -48,24 +48,14 @@ bool cdr_serialize_custom_interfaces__msg__MotorControl(
   const custom_interfaces__msg__MotorControl * ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Field name: front_left
+  // Field name: linear_velocity
   {
-    cdr << ros_message->front_left;
+    cdr << ros_message->linear_velocity;
   }
 
-  // Field name: front_right
+  // Field name: angular_velocity
   {
-    cdr << ros_message->front_right;
-  }
-
-  // Field name: rear_left
-  {
-    cdr << ros_message->rear_left;
-  }
-
-  // Field name: rear_right
-  {
-    cdr << ros_message->rear_right;
+    cdr << ros_message->angular_velocity;
   }
 
   return true;
@@ -76,24 +66,14 @@ bool cdr_deserialize_custom_interfaces__msg__MotorControl(
   eprosima::fastcdr::Cdr & cdr,
   custom_interfaces__msg__MotorControl * ros_message)
 {
-  // Field name: front_left
+  // Field name: linear_velocity
   {
-    cdr >> ros_message->front_left;
+    cdr >> ros_message->linear_velocity;
   }
 
-  // Field name: front_right
+  // Field name: angular_velocity
   {
-    cdr >> ros_message->front_right;
-  }
-
-  // Field name: rear_left
-  {
-    cdr >> ros_message->rear_left;
-  }
-
-  // Field name: rear_right
-  {
-    cdr >> ros_message->rear_right;
+    cdr >> ros_message->angular_velocity;
   }
 
   return true;
@@ -114,30 +94,16 @@ size_t get_serialized_size_custom_interfaces__msg__MotorControl(
   (void)padding;
   (void)wchar_size;
 
-  // Field name: front_left
+  // Field name: linear_velocity
   {
-    size_t item_size = sizeof(ros_message->front_left);
+    size_t item_size = sizeof(ros_message->linear_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Field name: front_right
+  // Field name: angular_velocity
   {
-    size_t item_size = sizeof(ros_message->front_right);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Field name: rear_left
-  {
-    size_t item_size = sizeof(ros_message->rear_left);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Field name: rear_right
-  {
-    size_t item_size = sizeof(ros_message->rear_right);
+    size_t item_size = sizeof(ros_message->angular_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -164,28 +130,14 @@ size_t max_serialized_size_custom_interfaces__msg__MotorControl(
   full_bounded = true;
   is_plain = true;
 
-  // Field name: front_left
+  // Field name: linear_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Field name: front_right
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Field name: rear_left
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Field name: rear_right
+  // Field name: angular_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
@@ -201,7 +153,7 @@ size_t max_serialized_size_custom_interfaces__msg__MotorControl(
     using DataType = custom_interfaces__msg__MotorControl;
     is_plain =
       (
-      offsetof(DataType, rear_right) +
+      offsetof(DataType, angular_velocity) +
       last_member_size
       ) == ret_val;
   }
@@ -213,24 +165,14 @@ bool cdr_serialize_key_custom_interfaces__msg__MotorControl(
   const custom_interfaces__msg__MotorControl * ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Field name: front_left
+  // Field name: linear_velocity
   {
-    cdr << ros_message->front_left;
+    cdr << ros_message->linear_velocity;
   }
 
-  // Field name: front_right
+  // Field name: angular_velocity
   {
-    cdr << ros_message->front_right;
-  }
-
-  // Field name: rear_left
-  {
-    cdr << ros_message->rear_left;
-  }
-
-  // Field name: rear_right
-  {
-    cdr << ros_message->rear_right;
+    cdr << ros_message->angular_velocity;
   }
 
   return true;
@@ -251,30 +193,16 @@ size_t get_serialized_size_key_custom_interfaces__msg__MotorControl(
   (void)padding;
   (void)wchar_size;
 
-  // Field name: front_left
+  // Field name: linear_velocity
   {
-    size_t item_size = sizeof(ros_message->front_left);
+    size_t item_size = sizeof(ros_message->linear_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
-  // Field name: front_right
+  // Field name: angular_velocity
   {
-    size_t item_size = sizeof(ros_message->front_right);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Field name: rear_left
-  {
-    size_t item_size = sizeof(ros_message->rear_left);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-
-  // Field name: rear_right
-  {
-    size_t item_size = sizeof(ros_message->rear_right);
+    size_t item_size = sizeof(ros_message->angular_velocity);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -299,28 +227,14 @@ size_t max_serialized_size_key_custom_interfaces__msg__MotorControl(
 
   full_bounded = true;
   is_plain = true;
-  // Field name: front_left
+  // Field name: linear_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Field name: front_right
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Field name: rear_left
-  {
-    size_t array_size = 1;
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Field name: rear_right
+  // Field name: angular_velocity
   {
     size_t array_size = 1;
     last_member_size = array_size * sizeof(uint8_t);
@@ -335,7 +249,7 @@ size_t max_serialized_size_key_custom_interfaces__msg__MotorControl(
     using DataType = custom_interfaces__msg__MotorControl;
     is_plain =
       (
-      offsetof(DataType, rear_right) +
+      offsetof(DataType, angular_velocity) +
       last_member_size
       ) == ret_val;
   }

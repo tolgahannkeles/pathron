@@ -1,3 +1,4 @@
+﻿// NOLINT: This file starts with a BOM since it contain non-ASCII characters
 // generated from rosidl_generator_c/resource/idl__struct.h.em
 // with input from custom_interfaces:msg/MotorControl.idl
 // generated code does not contain a copyright notice
@@ -22,10 +23,10 @@ extern "C"
 /// Struct defined in msg/MotorControl in the package custom_interfaces.
 typedef struct custom_interfaces__msg__MotorControl
 {
-  uint8_t front_left;
-  uint8_t front_right;
-  uint8_t rear_left;
-  uint8_t rear_right;
+  /// -100: tam geri, 0: dur, +100: tam ileri
+  int8_t linear_velocity;
+  /// -100: sola tam dön, 0: düz, +100: sağa tam dön
+  int8_t angular_velocity;
 } custom_interfaces__msg__MotorControl;
 
 // Struct for a sequence of custom_interfaces__msg__MotorControl.

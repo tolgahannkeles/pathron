@@ -50,40 +50,22 @@ bool custom_interfaces__msg__motor_control__convert_from_py(PyObject * _pymsg, v
     assert(strncmp("custom_interfaces.msg._motor_control.MotorControl", full_classname_dest, 49) == 0);
   }
   custom_interfaces__msg__MotorControl * ros_message = _ros_message;
-  {  // front_left
-    PyObject * field = PyObject_GetAttrString(_pymsg, "front_left");
+  {  // linear_velocity
+    PyObject * field = PyObject_GetAttrString(_pymsg, "linear_velocity");
     if (!field) {
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->front_left = (uint8_t)PyLong_AsUnsignedLong(field);
+    ros_message->linear_velocity = (int8_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
-  {  // front_right
-    PyObject * field = PyObject_GetAttrString(_pymsg, "front_right");
+  {  // angular_velocity
+    PyObject * field = PyObject_GetAttrString(_pymsg, "angular_velocity");
     if (!field) {
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->front_right = (uint8_t)PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
-  {  // rear_left
-    PyObject * field = PyObject_GetAttrString(_pymsg, "rear_left");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->rear_left = (uint8_t)PyLong_AsUnsignedLong(field);
-    Py_DECREF(field);
-  }
-  {  // rear_right
-    PyObject * field = PyObject_GetAttrString(_pymsg, "rear_right");
-    if (!field) {
-      return false;
-    }
-    assert(PyLong_Check(field));
-    ros_message->rear_right = (uint8_t)PyLong_AsUnsignedLong(field);
+    ros_message->angular_velocity = (int8_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
 
@@ -108,44 +90,22 @@ PyObject * custom_interfaces__msg__motor_control__convert_to_py(void * raw_ros_m
     }
   }
   custom_interfaces__msg__MotorControl * ros_message = (custom_interfaces__msg__MotorControl *)raw_ros_message;
-  {  // front_left
+  {  // linear_velocity
     PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->front_left);
+    field = PyLong_FromLong(ros_message->linear_velocity);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "front_left", field);
+      int rc = PyObject_SetAttrString(_pymessage, "linear_velocity", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
       }
     }
   }
-  {  // front_right
+  {  // angular_velocity
     PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->front_right);
+    field = PyLong_FromLong(ros_message->angular_velocity);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "front_right", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // rear_left
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->rear_left);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "rear_left", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
-  {  // rear_right
-    PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->rear_right);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "rear_right", field);
+      int rc = PyObject_SetAttrString(_pymessage, "angular_velocity", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

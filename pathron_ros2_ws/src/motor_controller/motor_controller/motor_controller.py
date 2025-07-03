@@ -10,13 +10,28 @@ class MotorControllerNode(Node):
         self.get_logger().info("Motor Controller node initialized!")
 
     def control_signal_callback(self, signal: MotorControl):
+        # linear: -100 (geri) → 0 → +100 (ileri)
+        # angular: -100 (sağa dön) → 0 → +100 (sola dön)
+
+        linear = signal.linear_velocity
+        angular = signal.angular_velocity
+
+        # Basit diferansiyel sürüş modeli:
+        left_motor_speed = linear + angular
+        right_motor_speed = linear - angular
+
+        # Hızları sınırla (-100 ile 100 arası kalmalı)
+        left_motor_speed = max(-100, min(100, left_motor_speed))
+        right_motor_speed = max(-100, min(100, right_motor_speed))
+
+        # Log çıktısı
         self.get_logger().info(
-            f"Motor Status - FL: {signal.front_left}, FR: {signal.front_right}, "
-            f"RL: {signal.rear_left}, RR: {signal.rear_right}"
+            f"Motor Güçleri - Left: {left_motor_speed}, Right: {right_motor_speed}"
         )
 
 def main(args=None):
-    rclpy.init()
+    rclpy.init(args=args)
     node = MotorControllerNode()
     rclpy.spin(node)
+    node.destroy_node()
     rclpy.shutdown()

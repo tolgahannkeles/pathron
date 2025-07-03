@@ -6,13 +6,13 @@
 module custom_interfaces {
   module msg {
     struct MotorControl {
-      uint8 front_left;
+      @verbatim (language="comment", text=
+        "-100: tam geri, 0: dur, +100: tam ileri")
+      int8 linear_velocity;
 
-      uint8 front_right;
-
-      uint8 rear_left;
-
-      uint8 rear_right;
+      @verbatim (language="comment", text=
+        "-100: sola tam dön, 0: düz, +100: sağa tam dön")
+      int8 angular_velocity;
     };
   };
 };

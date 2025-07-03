@@ -1,5 +1,5 @@
 CMakeFiles/custom_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/custom_interfaces/msg/motor_control__type_support.cpp.o: \
- /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_c/custom_interfaces/msg/motor_control__type_support.cpp \
+ /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_typesupport_c/custom_interfaces/msg/motor_control__type_support.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/cstddef \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -40,10 +40,10 @@ CMakeFiles/custom_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/cust
  /opt/ros/jazzy/include/rcutils/rcutils/sha256.h \
  /opt/ros/jazzy/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
  /opt/ros/jazzy/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
- /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/detail/motor_control__struct.h \
- /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/detail/motor_control__type_support.h \
- /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/rosidl_generator_c__visibility_control.h \
- /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/detail/motor_control__functions.h \
+ /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/detail/motor_control__struct.h \
+ /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/detail/motor_control__type_support.h \
+ /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_c/custom_interfaces/msg/detail/motor_control__functions.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \

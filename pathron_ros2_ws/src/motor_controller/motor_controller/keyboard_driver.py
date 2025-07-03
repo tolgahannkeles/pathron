@@ -10,155 +10,115 @@ class KeyboardDriverNode(Node):
 
     def __init__(self):
         super().__init__("keyboard_driver_node")
-        self.motor_control_topic_ = self.create_publisher(MotorControl, "motor_control_topic", 10)
-        
-        # Motor hızları (0-255 arası)
-        self.motor_speeds = {
-            'front_left': 0,
-            'front_right': 0,
-            'rear_left': 0,
-            'rear_right': 0
-        }
-        
-        # Klavye ayarları
+        self.motor_pub_ = self.create_publisher(MotorControl, "motor_control_topic", 10)
+
+        self.linear_velocity = 0
+        self.angular_velocity = 0
+
+        self.last_linear_velocity = None
+        self.last_angular_velocity = None
+
         self.settings = termios.tcgetattr(sys.stdin)
-        
-        # Timer ile sürekli mesaj yayınlama
-        self.timer = self.create_timer(0.1, self.publish_motor_control)
-        
-        # Klavye dinleme thread'i
+
         self.keyboard_thread = threading.Thread(target=self.keyboard_listener)
         self.keyboard_thread.daemon = True
         self.keyboard_thread.start()
-        
-        self.get_logger().info("Keyboard Driver Node started!")
+
+        self.get_logger().info("Keyboard Driver Node started.")
         self.print_instructions()
-    
+
     def print_instructions(self):
-        """Kullanım talimatlarını yazdır"""
         print("\n" + "="*50)
         print("KEYBOARD MOTOR CONTROL")
         print("="*50)
-        print("W: İleri hareket (hız: 50)")
-        print("S: Geri hareket (hız: 50)")
-        print("A: Sola dönüş (hız: 50)")
-        print("D: Sağa dönüş (hız: 50)")
-        print("SPACE: Tüm motorları durdur")
+        print("W: İleri (linear +10)")
+        print("S: Geri (linear -10)")
+        print("A: Sola dön (angular -10)")
+        print("D: Sağa dön (angular +10)")
+        print("SPACE: Tümünü durdur")
         print("X: Çıkış")
         print("="*50)
-        print("Mevcut motor hızları:")
         self.print_motor_status()
-    
+
     def print_motor_status(self):
-        """Motor durumunu yazdır"""
-        print(f"FL: {self.motor_speeds['front_left']:3d} | FR: {self.motor_speeds['front_right']:3d}")
-        print(f"RL: {self.motor_speeds['rear_left']:3d} | RR: {self.motor_speeds['rear_right']:3d}")
-        print("-" * 20)
-    
+        sys.stdout.write(f"\rLinear: {self.linear_velocity:>4} | Angular: {self.angular_velocity:>4}   ")
+        sys.stdout.flush()
+
+
+
     def get_key(self):
-        """Klavyeden tek tuş al"""
         tty.setraw(sys.stdin.fileno())
         key = sys.stdin.read(1)
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.settings)
         return key
-    
+
     def keyboard_listener(self):
-        """Klavye girişlerini dinle"""
         while True:
             try:
                 key = self.get_key().lower()
-                
+                changed = False
+
                 if key == 'x':
                     self.get_logger().info("Çıkış yapılıyor...")
                     rclpy.shutdown()
                     break
-                elif key == ' ':  # SPACE
-                    self.stop_all_motors()
+                elif key == ' ':
+                    self.linear_velocity = 0
+                    self.angular_velocity = 0
+                    changed = True
+                    self.get_logger().info("Tüm motorlar durduruldu")
                 elif key == 'w':
-                    self.move_forward()
+                    self.linear_velocity = self.clamp(self.linear_velocity + 10)
+                    changed = True
                 elif key == 's':
-                    self.move_backward()
+                    self.linear_velocity = self.clamp(self.linear_velocity - 10)
+                    changed = True
                 elif key == 'a':
-                    self.turn_left()
+                    self.angular_velocity = self.clamp(self.angular_velocity - 10)
+                    changed = True
                 elif key == 'd':
-                    self.turn_right()
-                
-                # Motor durumunu göster
-                self.print_motor_status()
-                
+                    self.angular_velocity = self.clamp(self.angular_velocity + 10)
+                    changed = True
+
+                if changed:
+                    self.publish_motor_command()
+                    self.print_motor_status()
+
             except Exception as e:
                 self.get_logger().error(f"Klavye hatası: {e}")
                 break
-    
-    def clamp_speed(self, speed):
-        """Hız değerini 0-255 arasında sınırla"""
-        return max(0, min(255, speed))
-    
-    def stop_all_motors(self):
-        """Tüm motorları durdur"""
-        for key in self.motor_speeds:
-            self.motor_speeds[key] = 0
-        self.get_logger().info("Tüm motorlar durduruldu")
-    
-    def move_forward(self):
-        """İleri hareket - sabit hız 50"""
-        for key in self.motor_speeds:
-            self.motor_speeds[key] = 50
-        self.get_logger().info("İleri hareket - hız: 50")
-    
-    def move_backward(self):
-        """Geri hareket - sabit hız 50 (negatif yön)"""
-        for key in self.motor_speeds:
-            self.motor_speeds[key] = 50  # Geri için de pozitif değer, yön kontrolü donanımda yapılır
-        self.get_logger().info("Geri hareket - hız: 50")
-    
-    def turn_left(self):
-        """Sola dönüş - sabit hız 50"""
-        self.motor_speeds['front_left'] = 0
-        self.motor_speeds['rear_left'] = 0
-        self.motor_speeds['front_right'] = 50
-        self.motor_speeds['rear_right'] = 50
-        self.get_logger().info("Sola dönüş - hız: 50")
-    
-    def turn_right(self):
-        """Sağa dönüş - sabit hız 50"""
-        self.motor_speeds['front_left'] = 50
-        self.motor_speeds['rear_left'] = 50
-        self.motor_speeds['front_right'] = 0
-        self.motor_speeds['rear_right'] = 0
-        self.get_logger().info("Sağa dönüş - hız: 50")
-    
-    def publish_motor_control(self):
-        """Motor kontrol mesajını yayınla"""
-        msg = MotorControl()
-        msg.front_left = self.motor_speeds['front_left']
-        msg.front_right = self.motor_speeds['front_right']
-        msg.rear_left = self.motor_speeds['rear_left']
-        msg.rear_right = self.motor_speeds['rear_right']
-        
-        self.motor_control_topic_.publish(msg)
-    
+
+    def clamp(self, val, min_val=-100, max_val=100):
+        return max(min_val, min(max_val, val))
+
+    def publish_motor_command(self):
+        if (self.linear_velocity != self.last_linear_velocity or
+            self.angular_velocity != self.last_angular_velocity):
+            
+            msg = MotorControl()
+            msg.linear_velocity = self.linear_velocity
+            msg.angular_velocity = self.angular_velocity
+            self.motor_pub_.publish(msg)
+
+            self.last_linear_velocity = self.linear_velocity
+            self.last_angular_velocity = self.angular_velocity
+
     def __del__(self):
-        """Destructor - terminal ayarlarını geri yükle"""
         try:
             termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.settings)
         except:
             pass
 
-
 def main(args=None):
     rclpy.init(args=args)
-    
-    keyboard_driver = KeyboardDriverNode()
-    
+    node = KeyboardDriverNode()
     try:
-        rclpy.spin(keyboard_driver)
+        rclpy.spin(node)
     except KeyboardInterrupt:
         pass
     finally:
-        keyboard_driver.destroy_node()
+        node.destroy_node()
         rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

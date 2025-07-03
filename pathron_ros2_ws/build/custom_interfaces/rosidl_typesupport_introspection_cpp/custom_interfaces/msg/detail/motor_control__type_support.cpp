@@ -38,17 +38,17 @@ void MotorControl_fini_function(void * message_memory)
   typed_message->~MotorControl();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorControl_message_member_array[4] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorControl_message_member_array[2] = {
   {
-    "front_left",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    "linear_velocity",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(custom_interfaces::msg::MotorControl, front_left),  // bytes offset in struct
+    offsetof(custom_interfaces::msg::MotorControl, linear_velocity),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -58,51 +58,15 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorControl_
     nullptr  // resize(index) function pointer
   },
   {
-    "front_right",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    "angular_velocity",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is key
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(custom_interfaces::msg::MotorControl, front_right),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "rear_left",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is key
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(custom_interfaces::msg::MotorControl, rear_left),  // bytes offset in struct
-    nullptr,  // default value
-    nullptr,  // size() function pointer
-    nullptr,  // get_const(index) function pointer
-    nullptr,  // get(index) function pointer
-    nullptr,  // fetch(index, &value) function pointer
-    nullptr,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "rear_right",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    false,  // is key
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(custom_interfaces::msg::MotorControl, rear_right),  // bytes offset in struct
+    offsetof(custom_interfaces::msg::MotorControl, angular_velocity),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -116,7 +80,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorControl_
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers MotorControl_message_members = {
   "custom_interfaces::msg",  // message namespace
   "MotorControl",  // message name
-  4,  // number of fields
+  2,  // number of fields
   sizeof(custom_interfaces::msg::MotorControl),
   false,  // has_any_key_member_
   MotorControl_message_member_array,  // message members

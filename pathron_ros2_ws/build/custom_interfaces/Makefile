@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tolgahan/pathron_ros2_ws/src/custom_interfaces
+CMAKE_SOURCE_DIR = /home/tolgahan/pathron/pathron_ros2_ws/src/custom_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tolgahan/pathron_ros2_ws/build/custom_interfaces
+CMAKE_BINARY_DIR = /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/CMakeFiles /home/tolgahan/pathron_ros2_ws/build/custom_interfaces//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/CMakeFiles /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -415,7 +415,7 @@ custom_interfaces__py: cmake_check_build_system
 
 # fast build rule for target.
 custom_interfaces__py/fast:
-	$(MAKE) $(MAKESILENT) -f /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/custom_interfaces__py/CMakeFiles/custom_interfaces__py.dir/build.make /home/tolgahan/pathron_ros2_ws/build/custom_interfaces/custom_interfaces__py/CMakeFiles/custom_interfaces__py.dir/build
+	$(MAKE) $(MAKESILENT) -f /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/custom_interfaces__py/CMakeFiles/custom_interfaces__py.dir/build.make /home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/custom_interfaces__py/CMakeFiles/custom_interfaces__py.dir/build
 .PHONY : custom_interfaces__py/fast
 
 rosidl_generator_c/custom_interfaces/msg/detail/motor_control__description.o: rosidl_generator_c/custom_interfaces/msg/detail/motor_control__description.c.o
