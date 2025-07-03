@@ -1,0 +1,3 @@
+[console_scripts]
+keyboard_driver = motor_controller.keyboard_driver:main
+motor_controller = motor_controller.motor_controller:main
