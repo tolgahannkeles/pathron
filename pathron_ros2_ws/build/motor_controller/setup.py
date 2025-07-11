@@ -1,1 +1,0 @@
-/home/tolgahan/pathron/pathron_ros2_ws/src/motor_controller/setup.py

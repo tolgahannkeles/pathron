@@ -1,1 +1,0 @@
-/home/tolgahan/pathron/pathron_ros2_ws/build/custom_interfaces/rosidl_generator_cpp/custom_interfaces/msg/detail/motor_control__type_support.hpp
