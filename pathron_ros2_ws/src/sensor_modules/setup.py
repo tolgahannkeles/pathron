@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
 	    "hcsr04_node = sensor_modules.hcsr04_node:main",
+        'mpu6050_node = sensor_modules.mpu6050_node:main',
         ],
     },
 )
