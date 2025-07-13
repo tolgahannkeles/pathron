@@ -2,12 +2,24 @@ import rclpy
 from rclpy.node import Node
 from custom_interfaces.msg import MotorControl
 import platform
+import yaml
+import os
+from ament_index_python.packages import get_package_share_directory
 
 if platform.machine().startswith("arm") or platform.machine().startswith("aarch64"):  # Sadece Raspberry Pi’de
     from motor_controller.motor_driver import MotorDriver
 else:
     MotorDriver = None  # Dummy fallback
 
+
+def load_pin_config():
+    config_path = os.path.join(
+        get_package_share_directory('pathron_config'),
+        'config',
+        'pin_config.yaml'
+    )
+    with open(config_path, 'r') as f:
+        return yaml.safe_load(f)
 
 class MotorControllerNode(Node):
 
@@ -16,9 +28,12 @@ class MotorControllerNode(Node):
         self.create_subscription(MotorControl, "motor_control_topic", self.control_signal_callback, 10)
 
         if MotorDriver:
+
+            pins = load_pin_config()
+
             self.motor_driver = MotorDriver(
-                in1=17, in2=18, ena=24,
-                in3=22, in4=23, enb=25
+                in1=pins["motors"]["left_forward"], in2=pins["motors"]["left_backward"], ena=pins["motors"]["enable_left"],
+                in3=pins["motors"]["right_forward"], in4=pins["motors"]["right_backward"], enb=pins["motors"]["enable_right"]
             )
             self.get_logger().info("MotorDriver initialized for Raspberry Pi.")
         else:

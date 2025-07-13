@@ -1,0 +1,12 @@
+ultrasonic:
+  trig_pin: 5
+  echo_pin: 6
+
+motors:
+  enable_left: 24
+  left_forward: 17
+  left_backward: 18
+
+  right_forward: 22
+  right_backward: 23
+  enable_right: 25
